@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.Pages.aboutbmi" BackgroundColor="White"
+             Title="aboutbmi">
+    <ScrollView>
+    <VerticalStackLayout>
+
+        <HorizontalStackLayout>
+            <Image  Source="bmiimage.jpg" Aspect="Fill"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout HorizontalOptions="Center">
+            <Label HorizontalOptions="Center" Text="Co je to BMI?" TextColor="Red" FontSize="30" FontAttributes="Bold"/>
+            <Label TextColor="Black" FontSize="16" Padding="30" Text="BMI (z anglického body mass index) je číslo používané jako indikátor podváhy, normální tělesné hmotnosti, nadváhy a obezity, umožňující statistické porovnávání tělesné hmotnosti lidí s různou výškou. Výslednou hodnotu je nutné interpretovat v závislosti na věku a pohlaví" />
+        </VerticalStackLayout>
+
+            <VerticalStackLayout Padding="30">
+            <Label Text="Charakteristika" TextColor="Red" FontSize="22" FontAttributes="Italic"/>
+            <Label TextColor="Black" FontSize="16" Padding="0, 15"  Text="Index BMI je možné spočítat vydělením hmotnosti daného člověka druhou mocninou jeho výšky:" />
+            <Image Source="bmimath.png" Aspect="Fill" WidthRequest="200" />
+            <Label Text="BMI je nejčastěji používaným ukazatelem, používají se i jiné indexy, např. Brocův index, Rohrerův index nebo WHR index." TextColor="Black" FontSize="16" Padding="0, 25" />
+            </VerticalStackLayout>
+        
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.Pages.overweight" BackgroundColor="White"
+             Title="overweight">
+
+    <ScrollView>
+    <VerticalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center" Padding="30">
+            <Image Source="overw.jpg" Aspect="Fill" MaximumWidthRequest="300" />
+        </HorizontalStackLayout>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Nadváha" TextColor="Orange" FontSize="23" FontAttributes="Bold" Padding="0, 10, 0, 15"/>
+            <Label Text="je předstupeň obezity, někdy bývá označována jako první stádium obezity. Přináší zvýšené riziko zdravotních komplikací. Pro evropskou populaci je podle kritérií Světové zdravotnické organizace (WHO) definována indexem tělesné hmotnosti (body-mass index, BMI) v rozmezí 25 až 30" TextColor="Black" FontSize="17"/>
+            <Label Text="Přičiny" TextColor="Orange" FontSize="20" FontAttributes="Italic" Padding="0, 10, 0, 15"/>
+            <Label Text="vyšší příjem energie než její výdej " TextColor="Black" FontSize="17"/>
+            <Label Text="genetika a vrozené dispozice" TextColor="Black" FontSize="17"/>
+            <Label Text="poruchy metabolismu" TextColor="Black" FontSize="17"/>
+            <Label Text="užívání některých léků" TextColor="Black" FontSize="17"/>
+            <Label Text="užívání některých léků" TextColor="Black" FontSize="17"/>
+            <Label Text="nevhodné jídelní návyky z rodiny" TextColor="Black" FontSize="17"/>
+
+            </VerticalStackLayout>
+    </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

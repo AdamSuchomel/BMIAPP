@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.Pages.BMIPAGE"
+             Title="BMIPAGE" BackgroundColor="#9474B4">
+    
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            >
+
+            <HorizontalStackLayout HorizontalOptions="Center" Padding="0,0,0,150">
+                <Label Text="BMI CALCULATOR" FontSize="25" FontAttributes="Bold"/>
+           </HorizontalStackLayout>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="Zadej Výšku (cm)" FontAttributes="Bold" FontSize="16" Padding="15" />
+                <Entry x:Name="Vyska" Text="" Margin="10"/>
+
+                <Label Text="Zadej hmotnost (kg)" FontAttributes="Bold" FontSize="16" Padding="15"/>
+                <Entry x:Name="Hmotnost" Text="" Margin="10"/>
+
+                <Button Text="Spočti" Clicked="Button_Clicked" Padding="15" TextColor="Black" FontAttributes="Bold"/>
+
+                <Label x:Name="Result" Text="" FontAttributes="Bold" FontSize="16" Padding="15"/>                
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="Jak na tom jste?" x:Name="GRAPH" Clicked="GRAPH_Clicked" TextColor="White" FontSize="16" FontAttributes="Bold" BackgroundColor="#EFA9A8"/>
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.MainPage" BackgroundColor="#9474B4" xmlns:models="clr-namespace:Projekt" xmlns:resources="clr-namespace:Projekt;assembly=Projekt" Resources="{resources:ButtonAnimation}" >
+
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25" >
+
+
+            <VerticalStackLayout x:Name="StackLayoutMain">
+
+                <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="0,-30,0,25">
+                    <Label TextColor="White" Text="BMI APP" FontSize="15" FontAttributes="Bold" Margin="0,40,0,30" HorizontalOptions="Center" VerticalOptions="Start"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center">
+                    <Label TextColor="White" Text="LAST RECORD" FontAttributes="Bold" FontSize="27" HorizontalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout x:Name="GRAPH">
+
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Padding="0,150,0,50">
+                    <Button Text="CALCULATE" CornerRadius="8" x:Name="CALCULATE" Clicked="CALCULATE_Clicked" BackgroundColor="#EFA9A8" TextColor="White" FontSize="17" WidthRequest="150" FontAttributes="Bold" Margin="10" />
+                    <Button Text="BMI?" CornerRadius="8" x:Name="BMI" Clicked="BMI_Clicked"  BackgroundColor="#53CEE9" TextColor="White" FontSize="17" WidthRequest="150" FontAttributes="Bold" Margin="10" />
+                </HorizontalStackLayout>
+
+                <Border BackgroundColor="White"  StrokeShape="RoundRectangle 30,30,0,0" Padding="15">
+                    <StackLayout BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" >
+                        <HorizontalStackLayout HorizontalOptions="Center">
+                            <Label Text="ALL RECORDS" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                        </HorizontalStackLayout>
+                        <VerticalStackLayout>
+                            <ListView ItemsSource="{Binding TheList}"  HorizontalOptions="Center">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <Label Text="{Binding TheTerm}" TextColor="Black" HorizontalOptions="Center" TextDecorations="None" />
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </VerticalStackLayout>
+                        <HorizontalStackLayout Padding="0, 50, 0, 0">
+                            <Button Text=">" x:Name="Refresh" CornerRadius="8" TextColor="White" Clicked="Refresh_Clicked"  BackgroundColor="#AC95D1" />
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout Padding="0, 100, 0, 0" Margin="0,0,0,50"  HorizontalOptions="Center" >
+                            <Button  Text="ADD NEW RECORD TO DB" x:Name="ADD" CornerRadius="8" Clicked="ADD_Clicked" TextColor="White" BackgroundColor="#53CEE9"/>
+                        </HorizontalStackLayout>
+                    </StackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

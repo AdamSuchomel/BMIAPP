@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Projekt.Pages.DB"
+             Title="DB" BackgroundColor="#53CEE9">
+    <ScrollView>    
+      <VerticalStackLayout Spacing="25">
+            <HorizontalStackLayout HorizontalOptions="Center" Padding="20">
+                <Label Text="Write to DB" FontAttributes="Bold" FontSize="25"/>
+            </HorizontalStackLayout>
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Zadej jméno" FontSize="15" FontAttributes="Bold" Padding="5"/>
+                <Entry x:Name="NAME"  BackgroundColor="white" TextColor="Black" WidthRequest="150"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Zadej Přijmení" FontSize="15" FontAttributes="Bold" Padding="5"/>
+                <Entry x:Name="SURNAME"  BackgroundColor="white" TextColor="Black" WidthRequest="150"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="Center">
+                <Label Text="Zadej BMI" FontSize="15" FontAttributes="Bold" Padding="5"/>
+                <Entry x:Name="VALUE"  BackgroundColor="white" TextColor="Black" WidthRequest="150"/>
+            </StackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="Ulož" x:Name="Save" Clicked="Save_Clicked" TextColor="#53CEE9" FontAttributes="Bold" WidthRequest="200" />
+            </HorizontalStackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
