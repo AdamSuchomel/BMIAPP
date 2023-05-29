@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Projekt.MainPage" BackgroundColor="#9474B4" xmlns:models="clr-namespace:Projekt" xmlns:resources="clr-namespace:Projekt;assembly=Projekt" Resources="{resources:ButtonAnimation}" >
 
-
+    
     <ScrollView>
         <VerticalStackLayout
             Spacing="25" >
@@ -50,6 +50,7 @@
 
                         <HorizontalStackLayout Padding="0, 100, 0, 0" Margin="0,0,0,50"  HorizontalOptions="Center" >
                             <Button  Text="ADD NEW RECORD TO DB" x:Name="ADD" CornerRadius="8" Clicked="ADD_Clicked" TextColor="White" BackgroundColor="#53CEE9"/>
+                            <Label x:Name="lbl" TextColor="Black"/>
                         </HorizontalStackLayout>
                     </StackLayout>
                 </Border>

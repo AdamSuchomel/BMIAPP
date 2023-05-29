@@ -13,6 +13,8 @@ public partial class MainPage : ContentPage
         termRepository = new TermRepository();
         BindingContext = termRepository;
         InitializeComponent();
+
+        
     }
 
 
@@ -28,12 +30,12 @@ public partial class MainPage : ContentPage
     }
     private async void ADD_Clicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new DB());
+        await Navigation.PushAsync(new DB(termRepository));
     }
 
     private void Refresh_Clicked(object sender, EventArgs e)
     {
-
+        lbl.Text = termRepository._list.Count.ToString();
     }
 
     private async void BMI_Clicked(object sender, EventArgs e)
