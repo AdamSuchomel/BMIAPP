@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Projekt.MainPage" BackgroundColor="#9474B4" xmlns:models="clr-namespace:Projekt" xmlns:resources="clr-namespace:Projekt;assembly=Projekt" Resources="{resources:ButtonAnimation}" >
+             x:Class="Projekt.MainPage" BackgroundColor="#9474B4" xmlns:models="clr-namespace:Projekt" xmlns:resources="clr-namespace:Projekt;assembly=Projekt" Resources="{resources:ButtonAnimation}"  xmlns:chart="clr-namespace:Syncfusion.Maui.Charts;assembly=Syncfusion.Maui.Charts" xmlns:model="clr-namespace:Projekt.Charts">
 
     
     <ScrollView>
@@ -15,15 +15,35 @@
                     <Label TextColor="White" Text="BMI APP" FontSize="15" FontAttributes="Bold" Margin="0,40,0,30" HorizontalOptions="Center" VerticalOptions="Start"/>
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout HorizontalOptions="Center">
+                <HorizontalStackLayout HorizontalOptions="Center"  Padding="0,0,0,30">
                     <Label TextColor="White" Text="LAST RECORD" FontAttributes="Bold" FontSize="27" HorizontalOptions="Center" />
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout x:Name="GRAPH">
+                <chart:SfCartesianChart Grid.Row="2"
+                HeightRequest="200"
+                WidthRequest="350">
 
-                </HorizontalStackLayout>
+                    <chart:SfCartesianChart.BindingContext>
+                        <model:ViewModel />
+                    </chart:SfCartesianChart.BindingContext>
+                    
+                    <chart:SfCartesianChart.XAxes>
+                        <chart:CategoryAxis />
+                    </chart:SfCartesianChart.XAxes>
 
-                <HorizontalStackLayout HorizontalOptions="Center" Padding="0,150,0,50">
+                    <chart:SfCartesianChart.YAxes>
+                        <chart:NumericalAxis />
+                    </chart:SfCartesianChart.YAxes>
+
+                    <chart:LineSeries XBindingPath="Time"
+					  ItemsSource="{Binding Data}"
+					  YBindingPath="BMI"/>
+                    <chart:LineSeries XBindingPath="Time"
+					  ItemsSource="{Binding Data}"
+					  YBindingPath="BMI"/>
+                </chart:SfCartesianChart>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Padding="0,50,0,50">
                     <Button Text="CALCULATE" CornerRadius="8" x:Name="CALCULATE" Clicked="CALCULATE_Clicked" BackgroundColor="#EFA9A8" TextColor="White" FontSize="17" WidthRequest="150" FontAttributes="Bold" Margin="10" />
                     <Button Text="BMI?" CornerRadius="8" x:Name="BMI" Clicked="BMI_Clicked"  BackgroundColor="#53CEE9" TextColor="White" FontSize="17" WidthRequest="150" FontAttributes="Bold" Margin="10" />
                 </HorizontalStackLayout>
@@ -31,10 +51,11 @@
                 <Border BackgroundColor="White"  StrokeShape="RoundRectangle 30,30,0,0" Padding="15">
                     <StackLayout BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" >
                         <HorizontalStackLayout HorizontalOptions="Center">
-                            <Label Text="ALL RECORDS" TextColor="Black" FontAttributes="Bold" FontSize="20"/>
+                            <Label Text="ALL RECORDS" TextColor="Black" Padding="0,0,0,10" FontAttributes="Bold" FontSize="20"/>
                         </HorizontalStackLayout>
-                        <VerticalStackLayout>
-                            <ListView ItemsSource="{Binding TheList}"  HorizontalOptions="Center">
+                        <VerticalStackLayout >
+                            <ListView x:Name="Binding" ItemsSource="{Binding TheList}"  HorizontalOptions="Center">
+
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>
@@ -45,10 +66,10 @@
                             </ListView>
                         </VerticalStackLayout>
                         <HorizontalStackLayout Padding="0, 50, 0, 0">
-                            <Button Text=">" x:Name="Refresh" CornerRadius="8" TextColor="White" Clicked="Refresh_Clicked"  BackgroundColor="#AC95D1" />
+                            <Button Text="> DELETE ALL " FontAttributes="Bold" FontSize="14" x:Name="Refresh" CornerRadius="8" TextColor="White" Clicked="Refresh_Clicked"  BackgroundColor="#AC95D1" />
                         </HorizontalStackLayout>
 
-                        <HorizontalStackLayout Padding="0, 100, 0, 0" Margin="0,0,0,50"  HorizontalOptions="Center" >
+                        <HorizontalStackLayout Padding="0, 30, 0, 0" Margin="0,0,0,30"  HorizontalOptions="Center" >
                             <Button  Text="ADD NEW RECORD TO DB" x:Name="ADD" CornerRadius="8" Clicked="ADD_Clicked" TextColor="White" BackgroundColor="#53CEE9"/>
                             <Label x:Name="lbl" TextColor="Black"/>
                         </HorizontalStackLayout>
