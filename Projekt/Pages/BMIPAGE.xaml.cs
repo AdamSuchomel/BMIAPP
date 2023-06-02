@@ -35,4 +35,10 @@ public partial class BMIPAGE : ContentPage
     {
         await Navigation.PushAsync(new GRAPH());
     }
+
+    private async void Back2_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+
+    }
 }

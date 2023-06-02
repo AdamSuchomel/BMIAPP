@@ -54,7 +54,7 @@
                             <Label Text="ALL RECORDS" TextColor="Black" Padding="0,0,0,10" FontAttributes="Bold" FontSize="20"/>
                         </HorizontalStackLayout>
                         <VerticalStackLayout >
-                            <ListView x:Name="Binding" ItemsSource="{Binding TheList}"  HorizontalOptions="Center">
+                            <ListView x:Name="Binding" ItemsSource="{Binding TheList}" HorizontalOptions="Center">
 
                                 <ListView.ItemTemplate>
                                     <DataTemplate>

@@ -22,13 +22,17 @@
                 <Label Text="Zadej hmotnost (kg)" FontAttributes="Bold" FontSize="16" Padding="15"/>
                 <Entry x:Name="Hmotnost" Text="" Margin="10"/>
 
-                <Button Text="Spočti" Clicked="Button_Clicked" Padding="15" TextColor="Black" FontAttributes="Bold"/>
+                <Button Text="Spočti" Clicked="Button_Clicked" Padding="15" TextColor="Black" BackgroundColor="White" FontAttributes="Bold"/>
 
                 <Label x:Name="Result" Text="" FontAttributes="Bold" FontSize="16" Padding="15"/>                
             </VerticalStackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Button Text="Jak na tom jste?" x:Name="GRAPH" Clicked="GRAPH_Clicked" TextColor="White" FontSize="16" FontAttributes="Bold" BackgroundColor="#EFA9A8"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Button Text="-> Zpět" x:Name="Back2" Clicked="Back2_Clicked"  TextColor="#9474B4" BackgroundColor="White" FontSize="14" FontAttributes="Bold"/>
             </HorizontalStackLayout>
 
 

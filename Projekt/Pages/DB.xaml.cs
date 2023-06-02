@@ -19,9 +19,14 @@ public partial class DB : ContentPage
 
     public async Task SaveState(string str)
     {
-        string path2 = @"C:\Users\20ib17_suchomel\source\repos\AdamSuchomel\BMIAPP\Projekt\Resources\Raw\notesss.txt";
-        string path = System.IO.Path.Combine(FileSystem.Current.AppDataDirectory, "notesss.txt");
-        using (StreamWriter sw = new StreamWriter(path2, true))
+
+        string projectDirectory = AppContext.BaseDirectory;
+        string relativePath = System.IO.Path.Combine(projectDirectory, "notesss.txt");
+
+        string path = System.IO.Path.Combine(FileSystem.AppDataDirectory, "notesss.txt");
+
+        // string path2 = @"C:\Users\20ib17_suchomel\source\repos\AdamSuchomel\BMIAPP\Projekt\Resources\Raw\notesss.txt";
+        using (StreamWriter sw = new StreamWriter(relativePath, true))
         {
             await sw.WriteLineAsync(str);
             await sw.FlushAsync();

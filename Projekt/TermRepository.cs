@@ -23,14 +23,21 @@ namespace Projekt
                 FillTermList();
 
         }
+
+
         public async void FillTermList()
         {
             String line;
+            string mainDir = FileSystem.Current.AppDataDirectory;
+            string fileName = "notesss.txt";
+            string filePath = System.IO.Path.Combine(mainDir, fileName);
+
             Term aTerm = new Term();
 
             try
             {
-                using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("notesss.txt");
+
+                using Stream fileStream = System.IO.File.OpenRead(filePath);
                 using StreamReader sr = new StreamReader(fileStream);
                 while ((line = sr.ReadLine()) != null)
                 {

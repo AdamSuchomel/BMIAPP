@@ -22,7 +22,7 @@
             </StackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center">
-                <Button Text="Ulož" x:Name="Save" Clicked="Save_Clicked" TextColor="#53CEE9" FontAttributes="Bold" WidthRequest="200" />
+                <Button Text="Ulož" x:Name="Save" Clicked="Save_Clicked" TextColor="#53CEE9" BackgroundColor="White" FontAttributes="Bold" WidthRequest="200" />
             </HorizontalStackLayout>
 
 
