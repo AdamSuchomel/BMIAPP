@@ -45,12 +45,29 @@ public partial class DB : ContentPage
 
         AllString = Name + " " + Surname + " " + "BMI " + BMI.ToString();
 
-        await SaveState(AllString);
+        try
+        {
+            await SaveState(AllString);
 
-        eTerm.TheTerm = AllString;
+            eTerm.TheTerm = AllString;
 
-        termRepository._list.Add(eTerm);
+            termRepository._list.Add(eTerm);
 
+            await Navigation.PopAsync();
+        }
+        catch 
+        {
+
+            await DisplayAlert("Chyba", "Špatný vstupní formát", "Potvrdit");
+        }
+
+
+
+        
+    }
+
+    private async void Back_Clicked(object sender, EventArgs e)
+    {
         await Navigation.PopAsync();
     }
 }

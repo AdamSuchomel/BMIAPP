@@ -20,12 +20,17 @@ namespace Projekt
         public TermRepository()
         {
                 _list = new ObservableCollection<Term>();
-                FillTermList();
+
+#if WINDOWS
+                FillTermListPC();
+#elif ANDROID
+            FillTermListAndroid();
+#endif
 
         }
 
 
-        public async void FillTermList()
+        public void FillTermListAndroid()
         {
             String line;
             string mainDir = FileSystem.Current.AppDataDirectory;
@@ -36,7 +41,6 @@ namespace Projekt
 
             try
             {
-
                 using Stream fileStream = System.IO.File.OpenRead(filePath);
                 using StreamReader sr = new StreamReader(fileStream);
                 while ((line = sr.ReadLine()) != null)
@@ -52,6 +56,31 @@ namespace Projekt
                 error.TheTerm = ex.ToString();
                 _list.Add(error);
                 
+            }
+        }
+
+        public async void FillTermListPC()
+        {
+            String line;
+            Term aTerm = new Term();
+
+            try
+            {
+                using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("notesss.txt");
+                using StreamReader sr = new StreamReader(fileStream);
+                while ((line = sr.ReadLine()) != null)
+                {
+                    aTerm = new Term();
+                    aTerm.TheTerm = line;
+                    _list.Add(aTerm);
+                }
+            }
+            catch (Exception ex)
+            {
+                Term error = new Term();
+                error.TheTerm = ex.ToString();
+                _list.Add(error);
+
             }
         }
 

@@ -21,7 +21,11 @@
             <Image Source="bmimath.png" Aspect="Fill" WidthRequest="200" />
             <Label Text="BMI je nejčastěji používaným ukazatelem, používají se i jiné indexy, např. Brocův index, Rohrerův index nebo WHR index." TextColor="Black" FontSize="16" Padding="0, 25" />
             </VerticalStackLayout>
-        
-    </VerticalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End">
+                <Button Text="-> Zpět" x:Name="Back" Margin="30" Clicked="Back_Clicked" TextColor="Black" BackgroundColor="White" FontSize="14" FontAttributes="Bold" BorderColor="Wheat"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

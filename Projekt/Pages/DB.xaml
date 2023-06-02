@@ -25,6 +25,10 @@
                 <Button Text="Ulož" x:Name="Save" Clicked="Save_Clicked" TextColor="#53CEE9" BackgroundColor="White" FontAttributes="Bold" WidthRequest="200" />
             </HorizontalStackLayout>
 
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="End">
+                <Button Text="-> Zpět" x:Name="Back" Margin="30" Clicked="Back_Clicked" TextColor="Black" BackgroundColor="White" FontSize="14" FontAttributes="Bold" BorderColor="Wheat"/>
+            </HorizontalStackLayout>
+
 
         </VerticalStackLayout>
     </ScrollView>
