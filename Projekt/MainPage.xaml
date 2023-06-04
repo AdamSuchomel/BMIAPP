@@ -11,12 +11,13 @@
 
             <VerticalStackLayout x:Name="StackLayoutMain">
 
+
                 <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Padding="0,-30,0,25">
                     <Label TextColor="White" Text="BMI APP" FontSize="15" FontAttributes="Bold" Margin="0,40,0,30" HorizontalOptions="Center" VerticalOptions="Start"/>
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout HorizontalOptions="Center"  Padding="0,0,0,30">
-                    <Label TextColor="White" Text="LAST RECORD" FontAttributes="Bold" FontSize="27" HorizontalOptions="Center" />
+                    <Label TextColor="White" Text="BMI over years" FontAttributes="Bold" FontSize="27" HorizontalOptions="Center" />
                 </HorizontalStackLayout>
 
                 <chart:SfCartesianChart Grid.Row="2"
