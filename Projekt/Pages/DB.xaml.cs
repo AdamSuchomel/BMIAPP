@@ -35,19 +35,38 @@ public partial class DB : ContentPage
         }
     }
 
+    public async Task SaveBMI(string str)
+    {
+
+        string projectDirectory = AppContext.BaseDirectory;
+        string relativePath = System.IO.Path.Combine(projectDirectory, "bmi.txt");
+
+        using (StreamWriter sw = new StreamWriter(relativePath, true))
+        {
+            await sw.WriteLineAsync(str);
+            await sw.FlushAsync();
+            sw.Close();
+
+        }
+    }
+
     private async void Save_Clicked(object sender, EventArgs e)
     {
         Term eTerm = new Term();
 
-        Name = NAME.Text;
-        Surname = SURNAME.Text;
-        BMI = double.Parse(VALUE.Text);
 
-        AllString = Name + " " + Surname + " " + "BMI " + BMI.ToString();
 
         try
         {
+            Name = NAME.Text;
+            Surname = SURNAME.Text;
+            BMI = double.Parse(VALUE.Text);
+
+            AllString = Name + " " + Surname + " " + "BMI " + BMI.ToString();
+
             await SaveState(AllString);
+
+            await SaveBMI(BMI.ToString());
 
             eTerm.TheTerm = AllString;
 

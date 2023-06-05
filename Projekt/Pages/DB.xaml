@@ -6,7 +6,7 @@
     <ScrollView>    
       <VerticalStackLayout Spacing="25">
             <HorizontalStackLayout HorizontalOptions="Center" Padding="20">
-                <Label Text="Write to DB" FontAttributes="Bold" FontSize="25"/>
+                <Label Text="Ulož" FontAttributes="Bold" FontSize="25"/>
             </HorizontalStackLayout>
             <StackLayout HorizontalOptions="Center">
                 <Label Text="Zadej jméno" FontSize="15" FontAttributes="Bold" Padding="5"/>

@@ -13,60 +13,46 @@ namespace Projekt.Charts
 
         public ViewModel()
         {
-            Data = new List<Models>()
-        {
-            new Models { Time = "1990 ", BMI = 21.9 },
-            new Models { Time = "2000", BMI = 23.3 },
-            new Models { Time = "2010", BMI = 24.3 },
-            new Models { Time = "2020", BMI = 27.1 }
-        };
+            Data = new List<Models>();
 
-        //    string[] arrayclass;
+            Data.Add(new Models("1990", 21.9));
+            Data.Add(new Models("2000", 23.3));
+            Data.Add(new Models("2010", 24.3));
+            Data.Add(new Models("2020", 27.1));
 
-        //public List<Models> Data { get; set; }
+            //    string[] arrayclass;
 
-        //public ViewModel()
-        //{
-        //    Data = new List<Models>();
+            //public List<Models> Data { get; set; }
 
-
-        //    ReadFile();
+            //public ViewModel()
+            //{
+            //    Data = new List<Models>();
 
 
-        //    //string[] arrayclass = { "75", "25", "30", "40" };
 
-        //    //Data = new List<Models>()
-        //    //    {
-        //    //             new Models { Time = "Leden ", BMI = Double.Parse(arrayclass[0]) },
-        //    //             new Models { Time = "Leden ", BMI = Double.Parse(arrayclass[1]) },
-        //    //             new Models { Time = "Leden ", BMI = Double.Parse(arrayclass[2]) },
-        //    //             new Models { Time = "Leden ", BMI = Double.Parse(arrayclass[3]) }
-        //    //        };
-        //}
+            //    ReadFile();
+            //}
+            //public async void ReadFile()
+            //{
+            //    string mainDir = FileSystem.Current.AppDataDirectory;
+            //    string fileName = "bmi.txt";
+            //    string filePath = System.IO.Path.Combine(mainDir, fileName);
 
 
-        //public async void ReadFile()
-        //{
-        //    string mainDir = FileSystem.Current.AppDataDirectory;
-        //    string fileName = "notesss.txt";
-        //    string filePath = System.IO.Path.Combine(mainDir, fileName);
+            //    Stream fileStream = System.IO.File.OpenRead(filePath);
+            //    StreamReader reader = new StreamReader(fileStream);
+            //    string fileContent = await reader.ReadToEndAsync();
+            //    string[] arrayclass = fileContent.Split('\n');
 
-        //    try
-        //    {
-        //        using Stream fileStream = await FileSystem.Current.OpenAppPackageFileAsync("BMI.txt");
-        //        using StreamReader reader = new StreamReader(fileStream);
-        //        string fileContent = await reader.ReadToEndAsync();
-        //        arrayclass = fileContent.Split(' ');
-        //        //lbl.Text = arrayclass[1] + arrayclass[2] + arrayclass[3];
+            //    foreach (var item in arrayclass)
+            //    {
+            //        Data.Add(new Models("Leden ", Double.Parse(item)));
+
+            //    }
 
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //    }
-        //}
-    }
-
+            //}
+        }
     }
 }
 
